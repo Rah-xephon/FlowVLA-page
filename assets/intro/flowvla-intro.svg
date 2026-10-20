@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f6f1"/>
+      <stop offset="1" stop-color="#edf2ec"/>
+    </linearGradient>
+    <radialGradient id="washA" cx="0.1" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#bfe3d7" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#bfe3d7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="washB" cx="0.9" cy="0.1" r="0.65">
+      <stop offset="0" stop-color="#f1dcae" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f1dcae" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#183242" flood-opacity="0.09"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="660" height="540" x="-250" y="-200" rx="270" fill="url(#washA)"/>
+  <rect width="720" height="560" x="850" y="-250" rx="280" fill="url(#washB)"/>
+
+  <g text-anchor="middle" fill="#183242">
+    <text x="640" y="156" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">FlowVLA</text>
+    <text x="640" y="226" font-family="Georgia, Times New Roman, serif" font-size="35">Learning Flow-Aware Physical Completion</text>
+    <text x="640" y="270" font-family="Georgia, Times New Roman, serif" font-size="35">for Quantitative Robotic Pouring</text>
+    <text x="640" y="330" fill="#2f8874" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2">PROJECT PAGE  ·  2026</text>
+    <text x="640" y="407" fill="#73838a" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="0.6">PARTICIPATING INSTITUTIONS</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="35" y="444" width="226" height="112" rx="16" fill="#ffffff"/>
+    <rect x="281" y="444" width="226" height="112" rx="16" fill="#ffffff"/>
+    <rect x="527" y="444" width="226" height="112" rx="16" fill="#102937"/>
+    <rect x="773" y="444" width="226" height="112" rx="16" fill="#ffffff"/>
+    <rect x="1019" y="444" width="226" height="112" rx="16" fill="#ffffff"/>
+  </g>
+
+  <image x="110" y="462" width="76" height="76" preserveAspectRatio="xMidYMid meet" xlink:href="../logos/zhejiang-university.png"/>
+  <image x="300" y="471" width="188" height="58" preserveAspectRatio="xMidYMid meet" xlink:href="../logos/deep-robotics.png"/>
+  <image x="540" y="478" width="200" height="45" preserveAspectRatio="xMidYMid meet" xlink:href="../logos/shanghai-ai-lab.webp"/>
+  <image x="845" y="462" width="82" height="76" preserveAspectRatio="xMidYMid meet" xlink:href="../logos/northeastern-university.png"/>
+  <image x="1037" y="471" width="190" height="60" preserveAspectRatio="xMidYMid meet" xlink:href="../logos/zhongguancun-academy.png"/>
+
+  <g transform="translate(590 626)">
+    <rect x="0" y="17" width="12" height="12" rx="6" fill="#2f8874" opacity="0.55"/>
+    <rect x="21" y="9" width="12" height="20" rx="6" fill="#2f8874" opacity="0.75"/>
+    <rect x="42" y="0" width="12" height="29" rx="6" fill="#2f8874"/>
+    <text x="74" y="23" fill="#49616d" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">PHYSICAL PROGRESS, MADE EXPLICIT</text>
+  </g>
+</svg>

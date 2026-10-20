@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
+  <meta name="theme-color" content="#f4f6f1">
+  <meta name="description" content="FlowVLA separates motor generation from physical-completion estimation for quantitative robotic pouring.">
+  <title>FlowVLA — Quantitative Robotic Pouring</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="FlowVLA home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>FlowVLA</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#idea">Idea</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#citation">Citation</a>
+        <a class="nav-paper" href="#citation">Paper <span>↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="top">
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="eyebrow-row reveal">
+          <span class="eyebrow">Project page · 2026</span>
+        </div>
+        <h1 class="hero-title reveal">FlowVLA</h1>
+        <p class="hero-subtitle reveal">Learning Flow-Aware Physical Completion<br>for Quantitative Robotic Pouring</p>
+        <p class="hero-lede reveal">
+          A robot can look almost unchanged while poured mass keeps accumulating. FlowVLA makes that hidden physical progress explicit—then returns at the right moment.
+        </p>
+
+        <div class="authors reveal" aria-label="Authors">
+          <span class="lead-author">Liwen Yang<sup>1,*</sup></span>
+          <span>Yutian Zhang<sup>1</sup></span>
+          <span>Jiaqi Zhai<sup>2</sup></span>
+          <span>Li Yang<sup>3</sup></span>
+          <span>Tutian Tang<sup>3</sup></span>
+          <span>Qiwei Shan<sup>1</sup></span>
+          <span>Yancheng Bi<sup>1</sup></span>
+          <span>Qiankuan Shangguan<sup>4</sup></span>
+          <span>Yangkun Zhu<sup>3</sup></span>
+          <span>Ce Hao<sup>5</sup></span>
+          <span>Dong Wei<sup>2,†</sup></span>
+          <span>Qiaojun Yu<sup>3,†</sup></span>
+          <span>Dibo Hou<sup>1,†</sup></span>
+        </div>
+        <p class="author-note reveal"><sup>*</sup> First author &nbsp;·&nbsp; <sup>†</sup> Corresponding authors</p>
+
+        <div class="affiliations reveal" aria-label="Affiliations">
+          <span><sup>1</sup> Zhejiang University</span>
+          <span><sup>2</sup> DEEP Robotics</span>
+          <span><sup>3</sup> Shanghai Artificial Intelligence Laboratory</span>
+          <span><sup>4</sup> Northeastern University</span>
+          <span><sup>5</sup> Zhongguancun Academy</span>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#overview-video">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch overview
+          </a>
+          <span class="button button-secondary button-disabled" aria-disabled="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 2v6h6M9 13h8M9 17h8"/></svg>
+            arXiv · coming soon
+          </span>
+          <span class="button button-secondary button-disabled" aria-disabled="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+            Code · coming soon
+          </span>
+        </div>
+
+        <div class="institution-strip reveal" aria-label="Participating institutions">
+          <a class="institution institution-seal" href="https://www.zju.edu.cn/english/" target="_blank" rel="noreferrer" aria-label="Zhejiang University">
+            <img src="assets/logos/zhejiang-university.png" alt="Zhejiang University">
+          </a>
+          <a class="institution" href="https://www.deeprobotics.cn/en/" target="_blank" rel="noreferrer" aria-label="DEEP Robotics">
+            <img src="assets/logos/deep-robotics.png" alt="DEEP Robotics">
+          </a>
+          <a class="institution institution-dark" href="https://www.shlab.org.cn/" target="_blank" rel="noreferrer" aria-label="Shanghai Artificial Intelligence Laboratory">
+            <img class="logo-wide" src="assets/logos/shanghai-ai-lab.webp" alt="Shanghai Artificial Intelligence Laboratory">
+          </a>
+          <a class="institution institution-seal" href="https://www.neu.edu.cn/" target="_blank" rel="noreferrer" aria-label="Northeastern University">
+            <img src="assets/logos/northeastern-university.png" alt="Northeastern University">
+          </a>
+          <a class="institution" href="https://www.bza.edu.cn/en/" target="_blank" rel="noreferrer" aria-label="Zhongguancun Academy">
+            <img src="assets/logos/zhongguancun-academy.png" alt="Zhongguancun Academy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section section-tight" id="overview-video">
+      <div class="container container-wide">
+        <div class="video-frame hero-video reveal">
+          <video controls playsinline preload="metadata" poster="assets/posters/overview-branded.jpg">
+            <source src="assets/video/flowvla-overview-branded.mp4" type="video/mp4">
+            Your browser does not support HTML video. <a href="assets/video/flowvla-overview-branded.mp4">Download the overview video.</a>
+          </video>
+          <div class="video-caption">
+            <span>Project overview</span>
+            <span>02:59 · BGM · captions in video</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="idea">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">01 / The problem</span>
+          <h2>When should the robot return?</h2>
+          <p>During steady pouring, images and robot pose may barely change while transferred mass continues to accumulate. Visually similar states can require opposite actions.</p>
+        </div>
+
+        <div class="aliasing-card reveal">
+          <div class="aliasing-visual">
+            <img src="assets/images/task-sequence.png" alt="Robot task sequence from approach and grasp through pouring, return, and placement">
+          </div>
+          <div class="aliasing-copy">
+            <span class="mini-label">Physical-completion aliasing</span>
+            <p class="equation">(I<sub>t₁</sub>, q<sub>t₁</sub>) ≈ (I<sub>t₂</sub>, q<sub>t₂</sub>)</p>
+            <p class="equation equation-contrast">M<sub>t₁</sub> ≠ M<sub>t₂</sub> &nbsp;→&nbsp; a*<sub>t₁</sub> ≠ a*<sub>t₂</sub></p>
+            <p>Seeing the target “pour 200 g” does not reveal how many grams have already moved—or how much will still leave the source during return.</p>
+          </div>
+        </div>
+
+        <div class="principles">
+          <article class="principle-card reveal">
+            <span class="principle-number">01</span>
+            <h3>Remember physical progress</h3>
+            <p>A recurrent force observer maintains flow, accumulated mass, uncertainty, reliability, and an onset latch across perceptually similar states.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span class="principle-number">02</span>
+            <h3>Separate motion modes</h3>
+            <p>Boundary-aware supervision prevents action chunks from blending continued pouring with the return maneuver.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span class="principle-number">03</span>
+            <h3>Predict what comes next</h3>
+            <p>A learned tail model anticipates residual outflow, so the controller returns before current mass alone reaches the target.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">02 / Method</span>
+          <h2>Motor generation and physical completion,<br>modeled together—but not conflated.</h2>
+          <p>FlowVLA couples a shared π0.5 action expert with an explicit, target-independent completion module.</p>
+        </div>
+        <a class="figure-card architecture-card reveal" href="assets/images/architecture.png" target="_blank" rel="noreferrer">
+          <img src="assets/images/architecture.png" alt="FlowVLA architecture with physical completion head, recurrent force belief, visual input, text input, and action expert">
+          <span class="figure-action">Open full-resolution figure ↗</span>
+        </a>
+
+        <div class="method-flow reveal" aria-label="Execution flow">
+          <div><span>Observe</span><strong>RGB · joints · wrench</strong></div>
+          <i aria-hidden="true">→</i>
+          <div><span>Estimate</span><strong>Flow · mass · tail</strong></div>
+          <i aria-hidden="true">→</i>
+          <div><span>Decide</span><strong>M̂<sub>t</sub> + T̂<sub>t</sub> ≥ g</strong></div>
+          <i aria-hidden="true">→</i>
+          <div><span>Act</span><strong>Return &amp; place</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="container">
+        <div class="section-heading section-heading-light reveal">
+          <span class="section-index">03 / Evidence</span>
+          <h2>Explicit completion changes the result.</h2>
+          <p>On the primary coffee-pot / water task, FlowVLA improves both quantitative accuracy and end-to-end completion.</p>
+        </div>
+
+        <div class="metric-grid reveal">
+          <article class="metric-card metric-accent">
+            <span class="metric-value">13.1<span> g</span></span>
+            <h3>MacroMAE</h3>
+            <p>Goal-balanced error at 100 / 200 / 300 g.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">83.5<span>%</span></span>
+            <h3>Within ±10%</h3>
+            <p>Among completed trials with final mass.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">53.7<span>%</span></span>
+            <h3>E2E + ±10%</h3>
+            <p>Manipulation and quantity success over all attempts.</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">1,684</span>
+            <h3>Demonstrations</h3>
+            <p>Across four container–fluid domains.</p>
+          </article>
+        </div>
+
+        <div class="table-card reveal">
+          <div class="table-header">
+            <div>
+              <span class="mini-label">Primary domain</span>
+              <h3>Coffee pot / water · 100 / 200 / 300 g</h3>
+            </div>
+            <span class="table-note">Lower MacroMAE is better</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Post-grasp</th>
+                  <th scope="col">E2E</th>
+                  <th scope="col">MacroMAE</th>
+                  <th scope="col">Within ±10%</th>
+                  <th scope="col">E2E + ±10%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">π0.5</th><td>33.3%</td><td>21.7%</td><td>66.6 g</td><td>13.3%</td><td>2.9%</td></tr>
+                <tr><th scope="row">ForceVLA</th><td>70.4%</td><td>45.2%</td><td>50.3 g</td><td>23.7%</td><td>10.7%</td></tr>
+                <tr><th scope="row">TA-VLA-Wrench</th><td>73.8%</td><td>47.0%</td><td>101.6 g</td><td>12.9%</td><td>6.1%</td></tr>
+                <tr><th scope="row">BELIEF-VLA</th><td>88.1%</td><td>59.0%</td><td>26.5 g</td><td>52.5%</td><td>31.0%</td></tr>
+                <tr class="highlight-row"><th scope="row">FlowVLA <span>Ours</span></th><td>94.0%</td><td>64.2%</td><td><strong>13.1 g</strong></td><td><strong>83.5%</strong></td><td><strong>53.7%</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fine-print">Mass accuracy is measured on completed trials; E2E + ±10% counts quantitatively accurate completed trials over all attempts. See the paper for full protocol and sample counts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experiment-section" id="experiments">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">04 / Robot experiments</span>
+          <h2>Watch the return decision unfold.</h2>
+          <p>Side-by-side trials show why force awareness alone is not enough: the policy must track accumulated physical progress and anticipate delayed outflow.</p>
+        </div>
+
+        <div class="video-grid">
+          <article class="experiment-card reveal">
+            <div class="experiment-video">
+              <video controls muted playsinline preload="none" poster="assets/posters/comparison-100g.jpg" data-src="assets/video/comparison-100g.mp4"></video>
+              <span class="duration">01:02</span>
+            </div>
+            <div class="experiment-copy">
+              <span class="trial-target">Target 100 g</span>
+              <h3>Stopping precision</h3>
+              <p>Representative comparison across π0.5, ForceVLA, BELIEF-VLA, and FlowVLA.</p>
+            </div>
+          </article>
+          <article class="experiment-card reveal">
+            <div class="experiment-video">
+              <video controls muted playsinline preload="none" poster="assets/posters/comparison-200g.jpg" data-src="assets/video/comparison-200g.mp4"></video>
+              <span class="duration">01:25</span>
+            </div>
+            <div class="experiment-copy">
+              <span class="trial-target">Target 200 g</span>
+              <h3>Knowing when to return</h3>
+              <p>Force-conditioned baselines may pour and return, yet still miss the requested physical quantity.</p>
+            </div>
+          </article>
+          <article class="experiment-card reveal">
+            <div class="experiment-video">
+              <video controls muted playsinline preload="none" poster="assets/posters/comparison-300g.jpg" data-src="assets/video/comparison-300g.mp4"></video>
+              <span class="duration">02:22</span>
+            </div>
+            <div class="experiment-copy">
+              <span class="trial-target">Target 300 g</span>
+              <h3>Long-horizon accumulation</h3>
+              <p>Persistent mass state disambiguates nearly unchanged observations over a longer pour.</p>
+            </div>
+          </article>
+          <article class="experiment-card reveal">
+            <div class="experiment-video">
+              <video controls muted playsinline preload="none" poster="assets/posters/generalization.jpg" data-src="assets/video/generalization.mp4"></video>
+              <span class="duration">00:50</span>
+            </div>
+            <div class="experiment-copy">
+              <span class="trial-target">Beyond trained targets</span>
+              <h3>Interpolation and new flow regimes</h3>
+              <p>Held-out 250 g plus kettle/water, saturated brine, and cooking-oil trials.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="closed-loop-grid">
+          <div class="closed-loop-copy reveal">
+            <span class="section-index">Automatic 300 g trial</span>
+            <h2>Return before the scale says 300.</h2>
+            <p>The learned tail predicts mass that will continue to flow after return begins. In this trial, the controller initiates return early and reaches a final mass of <strong>298.60 g</strong>.</p>
+            <ul class="signal-list">
+              <li><span class="signal signal-green"></span> Offline scale reference</li>
+              <li><span class="signal signal-purple"></span> Predicted terminal mass</li>
+              <li><span class="signal signal-orange"></span> Fixed-tail alternative</li>
+            </ul>
+          </div>
+          <a class="figure-card reveal" href="assets/images/closed-loop-300g.jpg" target="_blank" rel="noreferrer">
+            <img src="assets/images/closed-loop-300g.jpg" alt="Automatic 300 gram trial showing predicted terminal mass, reconstructed flow, and return detail">
+            <span class="figure-action">Open full-resolution figure ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section generalization-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">05 / Across targets and domains</span>
+          <h2>The same completion principle,<br>across very different flows.</h2>
+          <p>The primary model interpolates to held-out 150 / 250 g targets without retraining. Independently trained models further test the formulation on three additional container–fluid settings.</p>
+        </div>
+
+        <div class="domain-grid reveal">
+          <article><span class="domain-icon">01</span><h3>Coffee pot</h3><p>Water · 100–300 g</p><strong>13.1 g <small>MacroMAE</small></strong></article>
+          <article><span class="domain-icon">02</span><h3>Top-handle kettle</h3><p>Water · 200 / 400 g</p><strong>15.0% <small>relative MAE</small></strong></article>
+          <article><span class="domain-icon">03</span><h3>Soy-sauce dispenser</h3><p>Saturated brine · 100 g</p><strong>9.05 g <small>MAE</small></strong></article>
+          <article><span class="domain-icon">04</span><h3>Oil dispenser</h3><p>Cooking oil · 50 / 100 g</p><strong>10.2% <small>relative MAE</small></strong></article>
+        </div>
+
+        <div class="figure-pair">
+          <a class="figure-card reveal" href="assets/images/data-distribution.png" target="_blank" rel="noreferrer">
+            <img src="assets/images/data-distribution.png" alt="Demonstration dataset flow and duration distributions across four domains">
+            <span class="figure-caption">1,684 flow-labeled demonstrations across four domains</span>
+          </a>
+          <a class="figure-card reveal" href="assets/images/flow-profiles.png" target="_blank" rel="noreferrer">
+            <img src="assets/images/flow-profiles.png" alt="Median flow and central 95 percent ranges for the four container-fluid domains">
+            <span class="figure-caption">Different flow rates and residual-outflow tails</span>
+          </a>
+        </div>
+
+        <div class="setup-block reveal">
+          <div class="setup-image"><img src="assets/images/setup.jpg" alt="DR02 robot platform, cameras, wrist force torque sensor, containers, and electronic scale"></div>
+          <div class="setup-copy">
+            <span class="section-index">Experimental platform</span>
+            <h2>Scale-supervised,<br>scale-free at deployment.</h2>
+            <p>The DR02 upper-body robot uses head and wrist RGB, joint state, and a six-axis wrist force/torque sensor. The electronic scale supplies offline supervision and final evaluation only—it is unavailable to the deployed policy.</p>
+            <dl>
+              <div><dt>Vision</dt><dd>2 views · 30 Hz</dd></div>
+              <div><dt>Wrench</dt><dd>6 axes · 500 Hz</dd></div>
+              <div><dt>Action</dt><dd>50 × 13 joint targets</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section takeaway-section">
+      <div class="container takeaway-inner reveal">
+        <span class="section-index">The takeaway</span>
+        <blockquote>Precise pouring is not only an action-generation problem. It is a physical-completion problem.</blockquote>
+        <p>More demonstrations and force feedback improve manipulation, but do not by themselves resolve when a requested physical quantity has been reached.</p>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation">
+      <div class="container citation-grid">
+        <div class="citation-copy reveal">
+          <span class="section-index">Citation</span>
+          <h2>FlowVLA</h2>
+          <p>If you find FlowVLA useful in your research, please cite it as follows.</p>
+          <div class="resource-links">
+            <span aria-disabled="true">arXiv · coming soon</span>
+            <span aria-disabled="true">Code · coming soon</span>
+            <a href="#overview-video">Project video <span>↑</span></a>
+          </div>
+        </div>
+        <div class="bibtex-card reveal">
+          <button type="button" class="copy-button" data-copy-bib aria-label="Copy BibTeX">Copy</button>
+          <pre><code id="bibtex">@article{yang2026flowvla,
+  title   = {FlowVLA: Learning Flow-Aware Physical Completion
+             for Quantitative Robotic Pouring},
+  author  = {Yang, Liwen and Zhang, Yutian and Zhai, Jiaqi and
+             Yang, Li and Tang, Tutian and Shan, Qiwei and
+             Bi, Yancheng and Shangguan, Qiankuan and Zhu, Yangkun and
+             Hao, Ce and Wei, Dong and Yu, Qiaojun and Hou, Dibo},
+  year    = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>FlowVLA</span></a>
+        <p>Learning Flow-Aware Physical Completion for Quantitative Robotic Pouring.</p>
+      </div>
+      <div class="footer-status">
+        <p>© 2026 FlowVLA · Project page</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
