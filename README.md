@@ -17,7 +17,7 @@ Then open `http://localhost:8080`.
 ## Media
 
 - The main project video is a branded edit of the author-provided BGM version.
-- The four smaller videos are the selected 100 g, 200 g, 300 g, and generalization groups.
+- The demo gallery contains nine successful FlowVLA trials, balanced across the 100 g, 200 g, and 300 g targets.
 - Videos use H.264 for browser compatibility and are loaded lazily below the fold.
 
 ## Institution-logo sources

@@ -27,7 +27,7 @@
         <a href="#idea">Idea</a>
         <a href="#method">Method</a>
         <a href="#results">Results</a>
-        <a href="#experiments">Experiments</a>
+        <a href="#experiments">Demos</a>
         <a href="#citation">Citation</a>
         <a class="nav-paper" href="#citation">Paper <span>↓</span></a>
       </nav>
@@ -255,73 +255,101 @@
     <section class="section experiment-section" id="experiments">
       <div class="container">
         <div class="section-heading reveal">
-          <span class="section-index">04 / Robot experiments</span>
-          <h2>Watch the return decision unfold.</h2>
-          <p>Side-by-side trials show why force awareness alone is not enough: the policy must track accumulated physical progress and anticipate delayed outflow.</p>
+          <span class="section-index">04 / Successful trials</span>
+          <h2>FlowVLA in action.</h2>
+          <p>Nine successful robot trials, evenly sampled across 100 g, 200 g, and 300 g targets. Each run completes the full pour–return–place sequence without access to the scale at deployment.</p>
         </div>
 
-        <div class="video-grid">
-          <article class="experiment-card reveal">
-            <div class="experiment-video">
-              <video controls muted playsinline preload="none" poster="assets/posters/comparison-100g.jpg" data-src="assets/video/comparison-100g.mp4"></video>
-              <span class="duration">01:02</span>
+        <div class="demo-showcase">
+          <section class="demo-group" aria-labelledby="demo-100g">
+            <div class="demo-group-heading reveal">
+              <div><span class="trial-target">Target mass</span><h3 id="demo-100g">100 g</h3></div>
+              <p>3 representative successful trials</p>
             </div>
-            <div class="experiment-copy">
-              <span class="trial-target">Target 100 g</span>
-              <h3>Stopping precision</h3>
-              <p>Representative comparison across π0.5, ForceVLA, BELIEF-VLA, and FlowVLA.</p>
+            <div class="demo-grid">
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-100g-100-4.jpg" data-src="assets/video/demos/flowvla-100g-100-4.mp4" aria-label="FlowVLA 100 gram target, successful trial 1"></video>
+                  <span class="duration">00:42</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 01</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-100g-100-0.jpg" data-src="assets/video/demos/flowvla-100g-100-0.mp4" aria-label="FlowVLA 100 gram target, successful trial 2"></video>
+                  <span class="duration">00:46</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 02</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-100g-99-4.jpg" data-src="assets/video/demos/flowvla-100g-99-4.mp4" aria-label="FlowVLA 100 gram target, successful trial 3"></video>
+                  <span class="duration">00:44</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 03</strong></div>
+              </article>
             </div>
-          </article>
-          <article class="experiment-card reveal">
-            <div class="experiment-video">
-              <video controls muted playsinline preload="none" poster="assets/posters/comparison-200g.jpg" data-src="assets/video/comparison-200g.mp4"></video>
-              <span class="duration">01:25</span>
-            </div>
-            <div class="experiment-copy">
-              <span class="trial-target">Target 200 g</span>
-              <h3>Knowing when to return</h3>
-              <p>Force-conditioned baselines may pour and return, yet still miss the requested physical quantity.</p>
-            </div>
-          </article>
-          <article class="experiment-card reveal">
-            <div class="experiment-video">
-              <video controls muted playsinline preload="none" poster="assets/posters/comparison-300g.jpg" data-src="assets/video/comparison-300g.mp4"></video>
-              <span class="duration">02:22</span>
-            </div>
-            <div class="experiment-copy">
-              <span class="trial-target">Target 300 g</span>
-              <h3>Long-horizon accumulation</h3>
-              <p>Persistent mass state disambiguates nearly unchanged observations over a longer pour.</p>
-            </div>
-          </article>
-          <article class="experiment-card reveal">
-            <div class="experiment-video">
-              <video controls muted playsinline preload="none" poster="assets/posters/generalization.jpg" data-src="assets/video/generalization.mp4"></video>
-              <span class="duration">00:50</span>
-            </div>
-            <div class="experiment-copy">
-              <span class="trial-target">Beyond trained targets</span>
-              <h3>Interpolation and new flow regimes</h3>
-              <p>Held-out 250 g plus kettle/water, saturated brine, and cooking-oil trials.</p>
-            </div>
-          </article>
-        </div>
+          </section>
 
-        <div class="closed-loop-grid">
-          <div class="closed-loop-copy reveal">
-            <span class="section-index">Automatic 300 g trial</span>
-            <h2>Return before the scale says 300.</h2>
-            <p>The learned tail predicts mass that will continue to flow after return begins. In this trial, the controller initiates return early and reaches a final mass of <strong>298.60 g</strong>.</p>
-            <ul class="signal-list">
-              <li><span class="signal signal-green"></span> Offline scale reference</li>
-              <li><span class="signal signal-purple"></span> Predicted terminal mass</li>
-              <li><span class="signal signal-orange"></span> Fixed-tail alternative</li>
-            </ul>
-          </div>
-          <a class="figure-card reveal" href="assets/images/closed-loop-300g.jpg" target="_blank" rel="noreferrer">
-            <img src="assets/images/closed-loop-300g.jpg" alt="Automatic 300 gram trial showing predicted terminal mass, reconstructed flow, and return detail">
-            <span class="figure-action">Open full-resolution figure ↗</span>
-          </a>
+          <section class="demo-group" aria-labelledby="demo-200g">
+            <div class="demo-group-heading reveal">
+              <div><span class="trial-target">Target mass</span><h3 id="demo-200g">200 g</h3></div>
+              <p>3 representative successful trials</p>
+            </div>
+            <div class="demo-grid">
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-200g-199-7.jpg" data-src="assets/video/demos/flowvla-200g-199-7.mp4" aria-label="FlowVLA 200 gram target, successful trial 1"></video>
+                  <span class="duration">00:49</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 01</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-200g-200-0.jpg" data-src="assets/video/demos/flowvla-200g-200-0.mp4" aria-label="FlowVLA 200 gram target, successful trial 2"></video>
+                  <span class="duration">00:54</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 02</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-200g-198-5.jpg" data-src="assets/video/demos/flowvla-200g-198-5.mp4" aria-label="FlowVLA 200 gram target, successful trial 3"></video>
+                  <span class="duration">00:41</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 03</strong></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="demo-group" aria-labelledby="demo-300g">
+            <div class="demo-group-heading reveal">
+              <div><span class="trial-target">Target mass</span><h3 id="demo-300g">300 g</h3></div>
+              <p>3 representative successful trials</p>
+            </div>
+            <div class="demo-grid">
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-300g-300-5.jpg" data-src="assets/video/demos/flowvla-300g-300-5.mp4" aria-label="FlowVLA 300 gram target, successful trial 1"></video>
+                  <span class="duration">01:21</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 01</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-300g-301-6.jpg" data-src="assets/video/demos/flowvla-300g-301-6.mp4" aria-label="FlowVLA 300 gram target, successful trial 2"></video>
+                  <span class="duration">00:59</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 02</strong></div>
+              </article>
+              <article class="demo-card reveal">
+                <div class="experiment-video">
+                  <video controls muted playsinline preload="none" poster="assets/posters/demos/flowvla-300g-297-0.jpg" data-src="assets/video/demos/flowvla-300g-297-0.mp4" aria-label="FlowVLA 300 gram target, successful trial 3"></video>
+                  <span class="duration">00:49</span>
+                </div>
+                <div class="demo-meta"><span>Successful run</span><strong>Trial 03</strong></div>
+              </article>
+            </div>
+          </section>
         </div>
       </div>
     </section>
